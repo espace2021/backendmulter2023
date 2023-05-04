@@ -7,7 +7,8 @@ const {verifyToken} =require("../middleware/veriftoken")
 const Categorie = require('../models/categorie');
 
 // afficher la liste des categories.
-router.get('/', verifyToken, async (req, res, )=> {
+//router.get('/', verifyToken, async (req, res, )=> {
+router.get('/', async (req, res, )=> {
     try {
         const cat = await Categorie.find();
                 
