@@ -39,7 +39,7 @@ router.get('/:scategorieId',async(req, res)=>{
 });
 
 // chercher une sous catégorie par cat
-router.get('/cat/:categorieId',async(req, res)=>{
+router.get('/cat/:categorieID',async(req, res)=>{
     try {
           const scat = await SCategorie.find({ categorieID: req.params.categorieID}).exec();
         
