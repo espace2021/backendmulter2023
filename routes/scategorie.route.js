@@ -37,6 +37,18 @@ router.get('/:scategorieId',async(req, res)=>{
         res.status(404).json({ message: error.message });
     }
 });
+
+// chercher une sous catégorie par cat
+router.get('/cat/:categorieId',async(req, res)=>{
+    try {
+        const scat = await SCategorie.find(req.params.categorieId);
+        
+        res.status(200).json(scat);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+});
+
 // modifier une catégorie
 router.put('/:scategorieId', async (req, res)=> {
     const { nomscategorie, imagescat,categorieID} = req.body;
